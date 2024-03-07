@@ -1,0 +1,3 @@
+thien 18 60
+cuong 23 65
+nam 24 75
