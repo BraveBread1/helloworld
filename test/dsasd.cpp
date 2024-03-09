@@ -2,16 +2,42 @@
 
 using namespace std;
 
-int main()
+void in(int n, int k, int i, string r)
 {
-    int k = 0;
-    for(int i = 0; i <= 9; ++i)
+    if(i > k) 
     {
-        for(int i = 0; i <= 8; ++i)
+        cout << r << endl;
+        return;
+    }
+    for(int x = 0; x < n; ++x)
+    {
+        string result = r;
+        char c = 'a' + x;
+        bool cs = true;
+        for(string::iterator it = r.begin(); it != r.end(); ++it)
         {
-            ++k;
+            if(c == *it)
+            {
+                cs = false;
+                break;
+            }
+        }
+        if(cs)
+        {
+            result += c;
+            in(n, k, i + 1, result);
         }
     }
-    cout << k;
-    return 0;
+}
+
+int main()
+{
+    int n, k; cin >> n >> k;
+    if(n < 1 || n > 26 || n < k || k < 1)
+    {
+        cout << "-1";
+        return 0;
+    }
+    string result;
+    in(n, k, 1, result);
 }
