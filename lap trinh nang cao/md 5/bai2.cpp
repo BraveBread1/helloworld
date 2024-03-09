@@ -19,5 +19,5 @@ int main()
     }
     sort(a, a + n, comp);
     for(int i = 0; i < n; ++i) cout << fixed << setprecision(2) << a[i] << " ";
-    return 01;
+    return 0;
 }
